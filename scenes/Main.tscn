@@ -1,0 +1,417 @@
+[gd_scene load_steps=42 format=4 uid="uid://cggrkuopl5x7n"]
+
+[ext_resource type="Texture2D" uid="uid://bi1vhvuru3uex" path="res://assets/detective_home/detective_house_base.png" id="1_2li80"]
+[ext_resource type="PackedScene" uid="uid://cm30nrxp5d4dw" path="res://scenes/Detective.tscn" id="1_q6ur0"]
+[ext_resource type="Texture2D" uid="uid://cw5ngv733128k" path="res://assets/detective_home/kids_room/kids_room_wall.png" id="3_gh8g8"]
+[ext_resource type="Texture2D" uid="uid://cox4mpuj0387q" path="res://assets/detective_home/kids_room/kid_beds.png" id="4_lrbef"]
+[ext_resource type="Texture2D" uid="uid://dvhaojeyxcwdl" path="res://assets/detective_home/kids_room/bathroom_door.png" id="5_wk7iy"]
+[ext_resource type="Texture2D" uid="uid://b6h5jkarqbaxx" path="res://assets/detective_home/kids_room/lamp.png" id="6_d3141"]
+[ext_resource type="Texture2D" uid="uid://pewls4b1guyq" path="res://assets/detective_home/kids_room/shelf.png" id="7_hu42g"]
+[ext_resource type="Texture2D" uid="uid://cjpbcny0tko07" path="res://assets/detective_home/kids_room/toy_chest.png" id="8_tulgu"]
+[ext_resource type="Texture2D" uid="uid://bfy7d0qmnqov7" path="res://assets/detective_home/kids_room/toys.png" id="9_furi6"]
+[ext_resource type="Texture2D" uid="uid://8xc1c2ipgo83" path="res://assets/detective_home/kids_room/kids_bathroom/wall.png" id="10_2iqge"]
+[ext_resource type="Texture2D" uid="uid://b3483toioka4n" path="res://assets/detective_home/living_room/couch_blood.png" id="10_jrqcj"]
+[ext_resource type="Texture2D" uid="uid://cvawcemq2cdqa" path="res://assets/detective_home/kids_room/kids_bathroom/toilet.png" id="10_x5geu"]
+[ext_resource type="Texture2D" uid="uid://c38361c2fo7vd" path="res://assets/detective_home/kids_room/kids_bathroom/trash_bin.png" id="11_sfwvv"]
+[ext_resource type="Texture2D" uid="uid://dsc0357gkuk1k" path="res://assets/detective_home/kids_room/kids_bathroom/sink.png" id="12_6kxuv"]
+[ext_resource type="Texture2D" uid="uid://00n0ldiav65h" path="res://assets/detective_home/living_room/easy_chair_mark.png" id="12_s8e2p"]
+[ext_resource type="Texture2D" uid="uid://cki4x4nghuiwr" path="res://assets/detective_home/living_room/table_blood.png" id="14_26ojo"]
+[ext_resource type="Texture2D" uid="uid://bwnobr5x1aq2" path="res://assets/detective_home/kids_room/kids_bathroom/tub.png" id="15_46rsm"]
+[ext_resource type="Texture2D" uid="uid://bogw6ksioofgo" path="res://assets/detective_home/living_room/tv_blood.png" id="16_87uiv"]
+[ext_resource type="Texture2D" uid="uid://cxhoj8xu05dnl" path="res://assets/detective_home/guest_bathroom/toilet.png" id="17_dkjdi"]
+[ext_resource type="Texture2D" uid="uid://r3info0ke3g3" path="res://assets/detective_home/living_room/painting_stuff/tarp.png" id="17_v3bte"]
+[ext_resource type="Texture2D" uid="uid://dquitv4hvyowo" path="res://assets/detective_home/living_room/painting_stuff/tarp_paint.png" id="18_6k852"]
+[ext_resource type="Texture2D" uid="uid://bl3y5lcv0nhuv" path="res://assets/detective_home/guest_bathroom/trash_bin.png" id="18_5374d"]
+[ext_resource type="Texture2D" uid="uid://vw4hrxpvnr6m" path="res://assets/detective_home/guest_bathroom/sink.png" id="19_d6xwj"]
+[ext_resource type="Texture2D" uid="uid://brrnbc6vyggv7" path="res://assets/detective_home/living_room/painting_stuff/pallete.png" id="19_q1ne2"]
+[ext_resource type="Texture2D" uid="uid://chfbnqh4mhl3j" path="res://assets/detective_home/guest_bathroom/tub.png" id="20_3m143"]
+[ext_resource type="Texture2D" uid="uid://chpbyg81xq2e4" path="res://assets/detective_home/living_room/painting_stuff/canvas.png" id="20_7j6kk"]
+[ext_resource type="Texture2D" uid="uid://cew55ols2qkak" path="res://assets/detective_home/living_room/painting_stuff/brushes.png" id="21_lgwpv"]
+[ext_resource type="Texture2D" uid="uid://d1o8cprgn0dka" path="res://assets/detective_home/guest_bathroom/mirror.png" id="22_qua3e"]
+[ext_resource type="Texture2D" uid="uid://bdowgbsp3axvn" path="res://assets/detective_home/living_room/painting_stuff/easel.png" id="22_tmg48"]
+[ext_resource type="Texture2D" uid="uid://b4d3lgjl5wjib" path="res://assets/detective_home/living_room/tv.png" id="31_r5w56"]
+[ext_resource type="Texture2D" uid="uid://b6vbltpsf6ws0" path="res://assets/detective_home/living_room/broken_table.png" id="32_4fqve"]
+[ext_resource type="Texture2D" uid="uid://chnc320xf64o5" path="res://assets/detective_home/living_room/couch.png" id="33_7gt4x"]
+[ext_resource type="Texture2D" uid="uid://b6y5mg585tdry" path="res://assets/detective_home/living_room/easy_chair.png" id="34_v2hto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wflfi"]
+size = Vector2(350, 126)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut2cs"]
+texture = ExtResource("3_gh8g8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b0nlr"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ut2cs")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3q0b"]
+size = Vector2(128, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyceu"]
+texture = ExtResource("10_2iqge")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_stjo3"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_pyceu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7m581"]
+size = Vector2(260, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpvye"]
+size = Vector2(96, 63)
+
+[node name="Main" type="Node2D"]
+
+[node name="Detective_House" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Detective" parent="Detective_House" instance=ExtResource("1_q6ur0")]
+position = Vector2(432, 313)
+
+[node name="Main_Floor" type="StaticBody2D" parent="Detective_House"]
+z_index = -1
+position = Vector2(347, -148)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Main_Floor"]
+position = Vector2(-113, 290)
+texture = ExtResource("1_2li80")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Main_Floor"]
+position = Vector2(-347, 148)
+build_mode = 1
+polygon = PackedVector2Array(-154, -60, -182, -60, -182, -116, -62, -116, -62, -60, -122, -60, -122, -52, 66, -52, 66, 104, 70, 104, 70, -20, 706, -19, 706, 196, 450, 196, 450, 296, 454, 296, 458, 296, 458, 268, 546, 268, 546, 324, 454, 324, 454, 328, 450, 328, 450, 420, 390, 420, 390, 424, 358, 424, 358, 420, 298, 420, 298, 328, 290, 328, 290, 388, -54, 388, -54, 268, 6, 268, 6, 260, -22, 260, -22, 204, 98, 204, 98, 260, 38, 260, 38, 268, 290, 268, 290, 296, 298, 296, 298, 196, 74, 196, 74, 136, 70, 136, 70, 132, -214, 132, -214, -53, -154, -53)
+
+[node name="Kids_Room" type="Area2D" parent="Detective_House"]
+y_sort_enabled = true
+position = Vector2(126, 388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detective_House/Kids_Room"]
+position = Vector2(-7, -61)
+shape = SubResource("RectangleShape2D_wflfi")
+
+[node name="beds" type="StaticBody2D" parent="Detective_House/Kids_Room"]
+position = Vector2(13, -78)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/beds"]
+position = Vector2(0, 3)
+texture = ExtResource("4_lrbef")
+offset = Vector2(0, -30)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/beds"]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-59, 2, -29, 1, -29, -16, -30, -49, -59, -49)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/beds"]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(59, 2, 59, -62, 29, -62, 29, -60, 29, -14, 29, 1)
+
+[node name="shelf" type="StaticBody2D" parent="Detective_House/Kids_Room"]
+position = Vector2(13, -156)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/shelf"]
+position = Vector2(0, 22)
+texture = ExtResource("7_hu42g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/shelf"]
+position = Vector2(0, 22)
+polygon = PackedVector2Array(-29, 20, -29, -20, 29, -20, 29, 20)
+
+[node name="lamp" type="StaticBody2D" parent="Detective_House/Kids_Room"]
+position = Vector2(13, -144)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/lamp"]
+position = Vector2(0, -9)
+texture = ExtResource("6_d3141")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/lamp"]
+position = Vector2(0, -9)
+polygon = PackedVector2Array(5, -9, -4, -9, -6, -4.5, -6, 1.6, -5.4, 2.6, -6, 3.6, -6, 9, 6, 9, 6, 5.6, 4.7, 3, 5.2, 2, 6, 2, 6, -4.5, 5, -6.5)
+
+[node name="wall" type="TileMapLayer" parent="Detective_House/Kids_Room"]
+visible = false
+position = Vector2(72, -188)
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD4/wEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_b0nlr")
+
+[node name="bathroom_door" type="Sprite2D" parent="Detective_House/Kids_Room/wall"]
+position = Vector2(-176, 39)
+texture = ExtResource("5_wk7iy")
+
+[node name="toys" type="StaticBody2D" parent="Detective_House/Kids_Room"]
+position = Vector2(12, -94)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/toys"]
+position = Vector2(2, 31)
+texture = ExtResource("9_furi6")
+
+[node name="toy_chest" type="StaticBody2D" parent="Detective_House/Kids_Room"]
+position = Vector2(-164, -52)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/toy_chest"]
+position = Vector2(-1, -1)
+texture = ExtResource("8_tulgu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/toy_chest"]
+position = Vector2(-1, -1)
+polygon = PackedVector2Array(15, 24, 12, -12, -15, -12, -15, 24)
+
+[node name="bathroom" type="Area2D" parent="Detective_House/Kids_Room"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detective_House/Kids_Room/bathroom"]
+position = Vector2(-88, -156)
+shape = SubResource("RectangleShape2D_b3q0b")
+
+[node name="wall" type="TileMapLayer" parent="Detective_House/Kids_Room/bathroom"]
+position = Vector2(-88, -252)
+tile_map_data = PackedByteArray("AAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAD//wAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_stjo3")
+
+[node name="mirror" type="Sprite2D" parent="Detective_House/Kids_Room/bathroom/wall"]
+position = Vector2(3, 20)
+texture = ExtResource("22_qua3e")
+
+[node name="sink" type="StaticBody2D" parent="Detective_House/Kids_Room/bathroom"]
+position = Vector2(-93, -171)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/bathroom/sink"]
+position = Vector2(4, -22.4)
+texture = ExtResource("12_6kxuv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/bathroom/sink"]
+position = Vector2(4, -22.4)
+polygon = PackedVector2Array(-9.5, -23.5, -11.5, -22.1, -11.5, -5.5, -16.1, -5.5, -17.1, -3.5, -17.5, 8.9, -16.9, 9.5, -14.5, 9.5, -14.5, 7.5, -11.9, 7.5, -11.5, 6.7, -11.5, 23.5, 17.5, 23.5, 17.5, -22.6, 16.5, -23.1)
+
+[node name="trash_bin" type="StaticBody2D" parent="Detective_House/Kids_Room/bathroom"]
+position = Vector2(-107, -186)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/bathroom/trash_bin"]
+texture = ExtResource("11_sfwvv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/bathroom/trash_bin"]
+polygon = PackedVector2Array(-5, -6, -5, 5.1, -4, 5.6, 4.1, 6, 4.6, 5, 5, -6)
+
+[node name="toilet" type="StaticBody2D" parent="Detective_House/Kids_Room/bathroom"]
+position = Vector2(-121, -174)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/bathroom/toilet"]
+position = Vector2(0, -16)
+texture = ExtResource("10_x5geu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/bathroom/toilet"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(8, -2.8, 8, -16.5, -8, -16.5, -8, -3.3, -7, -1.3, -8, 0.1, -8, 11.4, -6, 14.8, -6, 16.5, 6, 16.5, 7.8, 10.5, 8, -0.5, 7.9, -1.5)
+
+[node name="tub" type="StaticBody2D" parent="Detective_House/Kids_Room/bathroom"]
+position = Vector2(-40, -142)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Kids_Room/bathroom/tub"]
+position = Vector2(0, -29)
+texture = ExtResource("15_46rsm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/bathroom/tub"]
+position = Vector2(0, -29)
+polygon = PackedVector2Array(0, -28.1, -2.8, -29.5, -6, -29.5, -8, -28.1, -8, -24.9, -6, -23.9, -6, -22.5, -2.4, -22.5, -1.4, -24.5, 0, -24.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/bathroom/tub"]
+position = Vector2(0, -29)
+polygon = PackedVector2Array(8, -28.1, 5.2, -29.5, 2, -29.5, 0, -28.1, 0, -24.9, 2, -23.9, 2, -22.5, 5.6, -22.5, 6.6, -24.5, 8, -24.5)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Detective_House/Kids_Room/bathroom/tub"]
+position = Vector2(0, -29)
+polygon = PackedVector2Array(2, -25.5, -2, -25.5, -2, -23.9, -2.4, -23.5, -10.4, -23.5, -13, -20.9, -13, 28.1, -11, 29.1, 11.1, 29.5, 11.6, 28.5, 13, 28.5, 13, -20.7, 11, -22.1, 11, -23.5, 2.4, -23.5, 2, -23.9)
+
+[node name="Living_Room" type="Area2D" parent="Detective_House"]
+y_sort_enabled = true
+position = Vector2(580, 198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detective_House/Living_Room"]
+position = Vector2(-1, -109.5)
+shape = SubResource("RectangleShape2D_7m581")
+
+[node name="couch" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(5, -67)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/couch"]
+position = Vector2(0, -16)
+texture = ExtResource("33_7gt4x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/couch"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(-39, -12, -51, -12, -51, 18.5, 51, 18.5, 51, -12)
+
+[node name="couch_blood" type="StaticBody2D" parent="Detective_House/Living_Room/couch"]
+position = Vector2(3, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/couch/couch_blood"]
+position = Vector2(12, -11)
+texture = ExtResource("10_jrqcj")
+
+[node name="easy_chair" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(-81, -102)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/easy_chair"]
+position = Vector2(2, 6)
+texture = ExtResource("34_v2hto")
+
+[node name="chair_mark" type="StaticBody2D" parent="Detective_House/Living_Room/easy_chair"]
+position = Vector2(1, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/easy_chair/chair_mark"]
+position = Vector2(4, -9)
+texture = ExtResource("12_s8e2p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/easy_chair"]
+position = Vector2(2, 6)
+polygon = PackedVector2Array(-21, -11, -21, 6, -3, 25, 6, 21, 19, 13, 20, 4, 11, -1, -1, -11)
+
+[node name="broken_table" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(3, -150)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/broken_table"]
+texture = ExtResource("32_4fqve")
+
+[node name="blood" type="StaticBody2D" parent="Detective_House/Living_Room/broken_table"]
+position = Vector2(8, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/broken_table/blood"]
+position = Vector2(-6, 14)
+texture = ExtResource("14_26ojo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/broken_table"]
+polygon = PackedVector2Array(-7, -11, -30, -12, -35, 8, -34, 11, -33, 22, 32, 22, 31, 15.6, 29, 13, 34, 7, 28, -12)
+
+[node name="tv" type="Sprite2D" parent="Detective_House/Living_Room"]
+position = Vector2(0, -278)
+texture = ExtResource("31_r5w56")
+
+[node name="blood" type="Sprite2D" parent="Detective_House/Living_Room/tv"]
+position = Vector2(20, 29)
+texture = ExtResource("16_87uiv")
+
+[node name="tarp" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(24, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/tarp"]
+position = Vector2(4, -12)
+texture = ExtResource("17_v3bte")
+
+[node name="paint" type="Sprite2D" parent="Detective_House/Living_Room/tarp/Sprite2D"]
+position = Vector2(-6, 0)
+texture = ExtResource("18_6k852")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/tarp"]
+position = Vector2(4, -12)
+polygon = PackedVector2Array(34, 10, 25, 4, 19, -15, -34, -11, -27, 15, 19, 15)
+
+[node name="pallete" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(85, -29)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/pallete"]
+texture = ExtResource("19_q1ne2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/pallete"]
+polygon = PackedVector2Array(3, -5, -1, -6, -6, -4, -7, -2, -7, 0, -4, 1, -5, 4, -3, 5, 2, 5, 5, 4, 7, 2.5, 7, -2.7, 5, -4.1)
+
+[node name="canvas" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(-20, -19)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/canvas"]
+position = Vector2(-1.90002, -10.6)
+texture = ExtResource("20_7j6kk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/canvas"]
+position = Vector2(-1.90002, -10.6)
+polygon = PackedVector2Array(14, 3, -1.6, -14, -3, -14, -13, -3, -13, -1, 2, 14)
+
+[node name="brushes" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(65, -66)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/brushes"]
+position = Vector2(2, 17)
+texture = ExtResource("21_lgwpv")
+
+[node name="easel" type="StaticBody2D" parent="Detective_House/Living_Room"]
+position = Vector2(36, -15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Living_Room/easel"]
+position = Vector2(3, -19)
+texture = ExtResource("22_tmg48")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Living_Room/easel"]
+position = Vector2(3, -19)
+polygon = PackedVector2Array(0, -3.5, -16, -3.5, -16, -6.5, -21, -6.5, -21, -3.1, -22.2, -2.5, -23, -2.5, -23, 1.5, -22, 1.5, -22, 4.5, -17, 4.5, -17, 1.5, -0.9, 1.5, 0, 9.6, 0, 11.2, 1.2, 11.7, 2.4, 10.5, 4, 10.5, 4, 7.5, 4.8, 7.5, 16.8, 13.5, 22.4, 13.5, 23, 12.9, 23, 10.9, 16.2, 7.5, 15, 7.5, 15, 2.3, 22.1, 1.5, 23, 1.5, 23, -2.5, 16, -2.5)
+
+[node name="Guest_Bath" type="Area2D" parent="Detective_House"]
+y_sort_enabled = true
+position = Vector2(501, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detective_House/Guest_Bath"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_bpvye")
+
+[node name="wall" type="TileMapLayer" parent="Detective_House/Guest_Bath"]
+position = Vector2(17, -96)
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_stjo3")
+
+[node name="mirror" type="Sprite2D" parent="Detective_House/Guest_Bath/wall"]
+position = Vector2(-45, 18)
+texture = ExtResource("22_qua3e")
+
+[node name="sink" type="StaticBody2D" parent="Detective_House/Guest_Bath"]
+position = Vector2(-29, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Guest_Bath/sink"]
+position = Vector2(4, -22.4)
+texture = ExtResource("19_d6xwj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Guest_Bath/sink"]
+position = Vector2(4, -22.4)
+polygon = PackedVector2Array(-16.5, -23.5, -17.5, -22.6, -17.5, 23.5, 11.5, 23.5, 11.5, 7.5, 14.5, 7.5, 14.5, 9.2, 15.7, 9.7, 16.9, 8.5, 17.5, 8.5, 17.5, -3.6, 16.5, -4.1, 16.5, -5.5, 11.9, -5.5, 11.5, -4.7, 11.5, -22.1, 9.5, -23.1)
+
+[node name="trash_bin" type="StaticBody2D" parent="Detective_House/Guest_Bath"]
+position = Vector2(-7, -28)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Guest_Bath/trash_bin"]
+texture = ExtResource("18_5374d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Guest_Bath/trash_bin"]
+polygon = PackedVector2Array(-5, -6, -5, 5.1, -4, 5.6, 4.1, 6, 4.6, 5, 5, -6)
+
+[node name="toilet" type="StaticBody2D" parent="Detective_House/Guest_Bath"]
+position = Vector2(7, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Guest_Bath/toilet"]
+position = Vector2(0, -16)
+texture = ExtResource("17_dkjdi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Guest_Bath/toilet"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(8, -2.8, 8, -16.5, -8, -16.5, -8, -3.3, -7, -1.3, -8, 0.1, -8, 11.4, -6, 14.8, -6, 16.5, 6, 16.5, 7.8, 10.5, 8, -0.5, 7.9, -1.5)
+
+[node name="tub" type="StaticBody2D" parent="Detective_House/Guest_Bath"]
+position = Vector2(33, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Detective_House/Guest_Bath/tub"]
+position = Vector2(0, -29)
+texture = ExtResource("20_3m143")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_House/Guest_Bath/tub"]
+position = Vector2(0, -29)
+polygon = PackedVector2Array(0, -28.1, -2.8, -29.5, -6, -29.5, -8, -28.1, -8, -24.9, -6, -23.9, -6, -22.5, -2.4, -22.5, -1.4, -24.5, 0, -24.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Detective_House/Guest_Bath/tub"]
+position = Vector2(0, -29)
+polygon = PackedVector2Array(8, -28.1, 5.2, -29.5, 2, -29.5, 0, -28.1, 0, -24.9, 2, -23.9, 2, -22.5, 5.6, -22.5, 6.6, -24.5, 8, -24.5)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Detective_House/Guest_Bath/tub"]
+position = Vector2(0, -29)
+polygon = PackedVector2Array(2, -25.5, -2, -25.5, -2, -23.9, -2.4, -23.5, -10.4, -23.5, -13, -20.9, -13, 28.1, -11, 29.1, 11.1, 29.5, 11.6, 28.5, 13, 28.5, 13, -20.7, 11, -22.1, 11, -23.5, 2.4, -23.5, 2, -23.9)
+
+[connection signal="area_exited" from="Detective_House/Kids_Room" to="Detective_House/Kids_Room" method="_on_area_exited"]
+[connection signal="body_entered" from="Detective_House/Kids_Room" to="Detective_House/Kids_Room" method="_on_body_entered"]
