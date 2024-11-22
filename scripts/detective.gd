@@ -1,27 +1,29 @@
 extends CharacterBody2D
 
 @export var speed = 150  # How fast the player moves in pixels/second
+var cutscene_mode = false  # Toggle for cutscene mode
+var movement_direction = Vector2.ZERO  # Player movement vector
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	@warning_ignore("shadowed_variable_base_class")
-	var movement_direction = Vector2.ZERO  # Player movement vector
+	if not cutscene_mode:  # Only allow manual input if not in cutscene mode
+		movement_direction = Vector2.ZERO
 
-	# Input handling
-	if Input.is_action_pressed("move_right"):
-		movement_direction.x += 1
-	if Input.is_action_pressed("move_left"):
-		movement_direction.x -= 1
-	if Input.is_action_pressed("move_down"):
-		movement_direction.y += 1
-	if Input.is_action_pressed("move_up"):
-		movement_direction.y -= 1
+		# Input handling
+		if Input.is_action_pressed("move_right"):
+			movement_direction.x += 1
+		if Input.is_action_pressed("move_left"):
+			movement_direction.x -= 1
+		if Input.is_action_pressed("move_down"):
+			movement_direction.y += 1
+		if Input.is_action_pressed("move_up"):
+			movement_direction.y -= 1
 
-	# Normalize direction to prevent faster diagonal movement
-	if movement_direction != Vector2.ZERO:
-		movement_direction = movement_direction.normalized()
+		# Normalize direction to prevent faster diagonal movement
+		if movement_direction != Vector2.ZERO:
+			movement_direction = movement_direction.normalized()
 
 	# Set velocity and move
 	velocity = movement_direction * speed
@@ -41,3 +43,7 @@ func _physics_process(delta):
 				$AnimatedSprite2D.animation = "walk_up"
 	else:
 		$AnimatedSprite2D.stop()
+
+# Function to move the player in cutscene mode
+func cutscene_move(direction: Vector2):
+	movement_direction = direction.normalized()
