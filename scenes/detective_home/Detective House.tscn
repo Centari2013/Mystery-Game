@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://cggrkuopl5x7n"]
+[gd_scene load_steps=59 format=4 uid="uid://cggrkuopl5x7n"]
 
 [ext_resource type="PackedScene" uid="uid://cm30nrxp5d4dw" path="res://scenes/Detective.tscn" id="1_es8h5"]
 [ext_resource type="Script" path="res://scripts/detective_house.gd" id="1_kaufy"]
@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://be1cw113osv5a" path="res://assets/detective_home/detective_room/bed.png" id="43_4osmr"]
 [ext_resource type="Texture2D" uid="uid://bj2oxh36r3o3i" path="res://assets/detective_home/detective_room/wall.png" id="44_0hfs1"]
 [ext_resource type="Texture2D" uid="uid://b68023i6t2hwh" path="res://assets/detective_home/detective_room/night_stands.png" id="45_ukekv"]
-[ext_resource type="Texture2D" uid="uid://cp0wwf0743q51" path="res://assets/dialogue_box.png" id="47_ttbw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wflfi"]
 size = Vector2(350, 126)
@@ -628,17 +627,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="DialogueBox" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 373.0
-offset_top = 400.0
-offset_right = 373.0
-offset_bottom = 400.0
-
-[node name="Sprite2D" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("47_ttbw6")
 
 [connection signal="area_exited" from="Kids_Room" to="Kids_Room" method="_on_area_exited"]
 [connection signal="body_entered" from="Kids_Room" to="Kids_Room" method="_on_body_entered"]

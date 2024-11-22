@@ -2,18 +2,24 @@ extends Node2D
 
 @onready var player = $Detective  # Reference to the player
 @onready var fade = $BlackFade/ColorRect  # Reference to the fade ColorRect
-@onready var dialogue_box = $DialogueBox  # Reference to the dialogue box
 
 
 func _ready() -> void:
 	start_cutscene()
 # Called to start the cutscene
 func start_cutscene() -> void:
+	var sprite: AnimatedSprite2D = player.get_node("AnimatedSprite2D")
 	player.cutscene_mode = true  # Disable player input
+	sprite.animation = "walk_up"
 	fade_in_from_black()
 	await get_tree().create_timer(3).timeout  # Wait for fade-in to complete
+	
+	
 	move_player_to(Vector2(371, 421))  # Instantly position player
 	await make_player_walk_to(Vector2(371, 254))  # Simulate walking
+	
+	play_dialogue("timeline")
+	await Dialogic.timeline_ended
 	player.cutscene_mode = false  # Re-enable player input
 
 
@@ -46,6 +52,12 @@ func player_walks(target_position: Vector2) -> void:
 func move_player_to(position: Vector2) -> void:
 	player.position = position
 
-# Shows dialogue with the Dialogue Manager (assumes dialogue manager is connected)
-func show_dialogue(character_name: String, text: String) -> void:
-	dialogue_box.start_dialogue(character_name, text)
+
+# Plays a Dialogic timeline
+func play_dialogue(timeline_name: String) -> void:
+	# check if a dialog is already running
+	if Dialogic.current_timeline != null:
+		return
+	Dialogic.Styles.load_style('main_style')
+	Dialogic.start('timeline')
+	get_viewport().set_input_as_handled()
