@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://cggrkuopl5x7n"]
+[gd_scene load_steps=72 format=4 uid="uid://cggrkuopl5x7n"]
 
 [ext_resource type="PackedScene" uid="uid://cm30nrxp5d4dw" path="res://scenes/Detective.tscn" id="1_es8h5"]
 [ext_resource type="Script" path="res://scripts/detective_house.gd" id="1_kaufy"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://d2kcrn7e7emi8" path="res://assets/detective_home/detective_room/detective_bathroom/wall.png" id="10_7yv3q"]
 [ext_resource type="Texture2D" uid="uid://d1o8cprgn0dka" path="res://assets/detective_home/guest_bathroom/mirror.png" id="11_g058c"]
 [ext_resource type="Texture2D" uid="uid://8xc1c2ipgo83" path="res://assets/detective_home/kids_room/kids_bathroom/wall.png" id="11_gl4v7"]
+[ext_resource type="Script" path="res://scenes/detective_home/interaction_area.gd" id="11_h46mr"]
+[ext_resource type="Texture2D" uid="uid://bhpuu1jlf1uk" path="res://assets/interaction_icon-sheet.png" id="12_0kr12"]
 [ext_resource type="Texture2D" uid="uid://dsc0357gkuk1k" path="res://assets/detective_home/kids_room/kids_bathroom/sink.png" id="12_d80em"]
 [ext_resource type="Texture2D" uid="uid://c38361c2fo7vd" path="res://assets/detective_home/kids_room/kids_bathroom/trash_bin.png" id="13_dq3tp"]
 [ext_resource type="Texture2D" uid="uid://cvawcemq2cdqa" path="res://assets/detective_home/kids_room/kids_bathroom/toilet.png" id="14_1n7kt"]
@@ -52,6 +54,31 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7m581"]
 size = Vector2(260, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mds7"]
+size = Vector2(78.25, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bk41"]
+atlas = ExtResource("12_0kr12")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4njvi"]
+atlas = ExtResource("12_0kr12")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkigy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bk41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4njvi")
+}],
+"loop": true,
+"name": &"pulse",
+"speed": 2.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kix13"]
 size = Vector2(256, 221)
@@ -116,8 +143,10 @@ sources/1 = SubResource("TileSetAtlasSource_l0edo")
 [node name="Detective House" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_kaufy")
+disable_cutscene = true
 
 [node name="Detective" parent="." instance=ExtResource("1_es8h5")]
+unique_name_in_owner = true
 position = Vector2(374, 420)
 
 [node name="Floor_Base" type="StaticBody2D" parent="."]
@@ -241,6 +270,20 @@ texture = ExtResource("21_2aip6")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Main_Area/Living_Room/broken_table"]
 visible = false
 polygon = PackedVector2Array(-7, -11, -30, -12, -35, 8, -34, 11, -33, 22, 32, 22, 31, 15.6, 29, 13, 34, 7, 28, -12)
+
+[node name="InteractionArea" type="Area2D" parent="Main_Area/Living_Room/broken_table"]
+script = ExtResource("11_h46mr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Area/Living_Room/broken_table/InteractionArea"]
+position = Vector2(-0.875, 0)
+shape = SubResource("RectangleShape2D_5mds7")
+
+[node name="icon" type="AnimatedSprite2D" parent="Main_Area/Living_Room/broken_table/InteractionArea"]
+visible = false
+position = Vector2(-2, -25)
+sprite_frames = SubResource("SpriteFrames_lkigy")
+animation = &"pulse"
+frame_progress = 0.184023
 
 [node name="tv" type="Sprite2D" parent="Main_Area/Living_Room"]
 position = Vector2(0, -278)
@@ -786,3 +829,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Main_Area/Living_Room/broken_table/InteractionArea" to="Main_Area/Living_Room/broken_table/InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Main_Area/Living_Room/broken_table/InteractionArea" to="Main_Area/Living_Room/broken_table/InteractionArea" method="_on_body_exited"]

@@ -19,14 +19,41 @@
 },
 "style": ""
 },
-"default_portrait": "Basic/Neutral",
+"default_portrait": "happy",
 "description": "",
 "display_name": "You",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Basic/Happy": {
+"angry": {
+"export_overrides": {
+"image": "\"res://assets/sprites/detective/angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"confused": {
+"export_overrides": {
+"image": "\"res://assets/sprites/detective/confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"embarrassed": {
+"export_overrides": {
+"image": "\"res://assets/sprites/detective/embarrassed.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"happy": {
 "export_overrides": {
 "image": "\"res://assets/sprites/detective/happy.png\""
 },
@@ -35,19 +62,36 @@
 "scale": 1,
 "scene": ""
 },
-"Basic/Neutral": {
+"neutral": {
 "export_overrides": {
 "image": "\"res://assets/sprites/detective/neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": "",
-"sound_mood": "Normal"
+"scene": ""
 },
-"Basic/Sad": {
+"sad": {
 "export_overrides": {
 "image": "\"res://assets/sprites/detective/sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"scared": {
+"export_overrides": {
+"image": "\"res://assets/sprites/detective/scared.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"surprised": {
+"export_overrides": {
+"image": "\"res://assets/sprites/detective/surprised.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

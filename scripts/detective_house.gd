@@ -2,13 +2,14 @@ extends Node2D
 
 @onready var player = $Detective  # Reference to the player
 @onready var fade = $BlackFade/ColorRect  # Reference to the fade ColorRect
-
+@export var disable_cutscene: bool = false
 
 
 
 func _ready() -> void:
-	Dialogic.signal_event.connect(look_around)
-	start_cutscene()
+	if not disable_cutscene:
+		Dialogic.signal_event.connect(look_around)
+		start_cutscene()
 	
 func look_around(arg:String):
 	var sprite: AnimatedSprite2D = player.get_node("AnimatedSprite2D")

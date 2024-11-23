@@ -1,11 +1,9 @@
-Detective (Basic/Happy): Alright, ya'll. Prepare yourselves for -
-Detective (Basic/Neutral): What the...
+Detective (happy): Alright, ya'll. Prepare yourselves for -
+Detective (neutral): What the...
 [signal arg="look_left"]
-Detective (Basic/Sad): Clay? Oslo?
+Detective (confused): Clay? Oslo?
 There is no answer.
 [signal arg="look_right"]
-Detective (Basic/Sad): Khalil? Amir?
+Detective (confused): Khalil? Amir?
 There is no answer.
 [signal arg="look_straight"]
-
-- Investigate

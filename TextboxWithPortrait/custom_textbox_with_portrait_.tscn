@@ -110,6 +110,7 @@ color = Color(0, 0, 0, 0)
 [node name="MarginContainer" type="MarginContainer" parent="Anchor/Panel/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/margin_left = -32
 theme_override_constants/margin_top = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Anchor/Panel/HBox/MarginContainer"]
@@ -117,12 +118,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="Control" type="VBoxContainer" parent="Anchor/Panel/HBox/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="Anchor/Panel/HBox/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="DialogicNode_NameLabel" type="Label" parent="Anchor/Panel/HBox/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 5
 theme_override_font_sizes/font_size = 8
 text = "Name"
 vertical_alignment = 1
@@ -131,6 +133,7 @@ script = ExtResource("2_y0h34")
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/Panel/HBox/MarginContainer/VBoxContainer" node_paths=PackedStringArray("textbox_root")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 5
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
