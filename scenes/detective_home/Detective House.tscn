@@ -143,7 +143,6 @@ sources/1 = SubResource("TileSetAtlasSource_l0edo")
 [node name="Detective House" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_kaufy")
-disable_cutscene = true
 
 [node name="Detective" parent="." instance=ExtResource("1_es8h5")]
 unique_name_in_owner = true
@@ -273,6 +272,7 @@ polygon = PackedVector2Array(-7, -11, -30, -12, -35, 8, -34, 11, -33, 22, 32, 22
 
 [node name="InteractionArea" type="Area2D" parent="Main_Area/Living_Room/broken_table"]
 script = ExtResource("11_h46mr")
+file_path = "res://scenes/detective_home/object_dialogues/broken_table.dtl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Area/Living_Room/broken_table/InteractionArea"]
 position = Vector2(-0.875, 0)

@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
 @export var speed = 150  # How fast the player moves in pixels/second
-var cutscene_mode = false  # Toggle for cutscene mode
+var cutscene_mode = false  # toggle for cutscene mode
+var dialogue_mode = false # toggle for dialogue mode
 var movement_direction = Vector2.ZERO  # Player movement vector
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	if not cutscene_mode:  # Only allow manual input if not in cutscene mode
+	if not cutscene_mode and not dialogue_mode:  
+		# Only allow manual input if not in cutscene or dialoguey mode
 		movement_direction = Vector2.ZERO
 
 		# Input handling
@@ -24,11 +26,15 @@ func _physics_process(delta):
 		# Normalize direction to prevent faster diagonal movement
 		if movement_direction != Vector2.ZERO:
 			movement_direction = movement_direction.normalized()
-
-	# Set velocity and move
-	velocity = movement_direction * speed
-	move_and_slide()  # Moves the CharacterBody2D based on its velocity
-
+	
+	if not dialogue_mode: # stop movement during regular
+		# Set velocity and move
+		velocity = movement_direction * speed
+		move_and_slide()  # Moves the CharacterBody2D based on its velocity
+	else:
+		$AnimatedSprite2D.stop()
+		
+		
 	# Animation handling
 	if velocity.length() > 0:
 		$AnimatedSprite2D.play()

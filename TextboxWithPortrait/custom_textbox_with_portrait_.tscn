@@ -27,6 +27,16 @@ mouse_filter = 2
 script = ExtResource("1_7jt4d")
 name_label_hide_when_no_character = false
 box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/default_stylebox.tres"
+typing_sounds_enabled = null
+typing_sounds_mode = null
+typing_sounds_sounds_folder = null
+typing_sounds_end_sound = null
+typing_sounds_every_nths_character = null
+typing_sounds_pitch = null
+typing_sounds_pitch_variance = null
+typing_sounds_volume = null
+typing_sounds_volume_variance = null
+typing_sounds_ignore_characters = null
 
 [node name="Anchor" type="Control" parent="."]
 layout_mode = 1
@@ -145,7 +155,9 @@ textbox_root = NodePath("../../../..")
 start_hidden = false
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/Panel/HBox/MarginContainer/VBoxContainer/DialogicNode_DialogText"]
+unique_name_in_owner = true
 script = ExtResource("5_sr2qw")
+play_every_character = 0
 
 [node name="TextureRect" type="TextureRect" parent="Anchor"]
 visible = false

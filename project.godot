@@ -29,7 +29,7 @@ directories/dtl_directory={
 "broken_table": "res://scenes/detective_home/object_dialogues/broken_table.dtl",
 "timeline": "res://scenes/detective_home/timeline.dtl"
 }
-layout/style_list=["res://main_style.tres"]
+layout/style_list=["res://main_style.tres", "res://temp.tres"]
 layout/default_style="res://main_style.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
