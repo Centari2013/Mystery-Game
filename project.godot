@@ -26,6 +26,7 @@ directories/dch_directory={
 "Detective": "res://characters/Detective.dch"
 }
 directories/dtl_directory={
+"coffee_table": "res://scenes/detective_home/object_dialogues/coffee_table.dtl",
 "timeline": "res://scenes/detective_home/timeline.dtl"
 }
 layout/style_list=["res://main_style.tres"]

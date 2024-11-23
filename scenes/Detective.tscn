@@ -116,7 +116,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_s2r4i")
-animation = &"walk_down"
+animation = &"walk_right"
 offset = Vector2(0, -23)
 
 [node name="feet collision" type="CollisionShape2D" parent="."]

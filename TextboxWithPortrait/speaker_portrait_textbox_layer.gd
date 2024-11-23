@@ -27,7 +27,7 @@ enum NameLabelColorModes {GLOBAL_COLOR, CHARACTER_COLOR, CUSTOM_COLOR}
 @export var name_label_custom_color: Color = Color.WHITE
 @export_subgroup("Behaviour")
 @export var name_label_alignment: Alignments = Alignments.LEFT
-@export var name_label_hide_when_no_character: bool = false
+@export var name_label_hide_when_no_character: bool = true
 @export_subgroup("Font & Size")
 @export var name_label_use_global_size: bool = true
 @export var name_label_custom_size: int = 15

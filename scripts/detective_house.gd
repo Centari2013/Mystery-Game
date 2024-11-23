@@ -4,20 +4,39 @@ extends Node2D
 @onready var fade = $BlackFade/ColorRect  # Reference to the fade ColorRect
 
 
+
+
 func _ready() -> void:
+	Dialogic.signal_event.connect(look_around)
 	start_cutscene()
+	
+func look_around(arg:String):
+	var sprite: AnimatedSprite2D = player.get_node("AnimatedSprite2D")
+	match arg:
+		"look_left":
+			sprite.animation = "walk_right"
+			sprite.flip_h = true
+		"look_right":
+			sprite.animation = "walk_right"
+		"look_straight":
+			sprite.animation = "walk_up"
+		
+
 # Called to start the cutscene
 func start_cutscene() -> void:
 	var sprite: AnimatedSprite2D = player.get_node("AnimatedSprite2D")
 	player.cutscene_mode = true  # Disable player input
+	sprite.hide()
 	sprite.animation = "walk_up"
 	fade_in_from_black()
-	await get_tree().create_timer(3).timeout  # Wait for fade-in to complete
+	await get_tree().create_timer(3).timeout # Wait for fade-in to complete
 	
-	
+	sprite.show()
+	await get_tree().create_timer(2).timeout
 	move_player_to(Vector2(371, 421))  # Instantly position player
-	await make_player_walk_to(Vector2(371, 254))  # Simulate walking
+	await make_player_walk_to(Vector2(371, 230))  # Simulate walking
 	
+	await get_tree().create_timer(1).timeout
 	play_dialogue("timeline")
 	await Dialogic.timeline_ended
 	player.cutscene_mode = false  # Re-enable player input
