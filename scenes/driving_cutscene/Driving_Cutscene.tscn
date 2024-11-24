@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://bytkdc0qnelrw"]
+
+[ext_resource type="Texture2D" uid="uid://ekax87j081vc" path="res://assets/night_driving/parallax_layers/0background0.png" id="1_w4be7"]
+[ext_resource type="Texture2D" uid="uid://bothl3br1dsd8" path="res://assets/night_driving/parallax_layers/1stars0.png" id="2_up2yl"]
+[ext_resource type="Texture2D" uid="uid://qmfnx3gmk8h6" path="res://assets/night_driving/parallax_layers/2background_lighting1.png" id="3_j8fh5"]
+[ext_resource type="Texture2D" uid="uid://3akdau5vbf0t" path="res://assets/night_driving/parallax_layers/3building1.png" id="4_fp3xg"]
+[ext_resource type="Texture2D" uid="uid://drvhrgqebn4w1" path="res://assets/night_driving/parallax_layers/4building2.png" id="5_ecpnf"]
+[ext_resource type="Texture2D" uid="uid://dbwxuva5uqpf7" path="res://assets/night_driving/parallax_layers/5building3.png" id="6_6y7i7"]
+[ext_resource type="Texture2D" uid="uid://n4t067dom0ka" path="res://assets/night_driving/parallax_layers/7road_trees3.png" id="7_n37ck"]
+[ext_resource type="Texture2D" uid="uid://c18xha5ep3rdx" path="res://assets/night_driving/parallax_layers/8water3.png" id="8_5b3r8"]
+[ext_resource type="Script" path="res://scenes/driving_cutscene/camera.gd" id="10_rcgjd"]
+
+[node name="Driving_Cutscene" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
+texture = ExtResource("1_w4be7")
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+position = Vector2(0, 27)
+texture = ExtResource("2_up2yl")
+
+[node name="Background_Lighting" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background_Lighting"]
+texture = ExtResource("3_j8fh5")
+
+[node name="Building1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Building1"]
+texture = ExtResource("4_fp3xg")
+
+[node name="Building2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Building2"]
+texture = ExtResource("5_ecpnf")
+
+[node name="Building3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Building3"]
+texture = ExtResource("6_6y7i7")
+
+[node name="Lower_Lights" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Lower_Lights"]
+
+[node name="Road_Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Road_Trees"]
+texture = ExtResource("7_n37ck")
+
+[node name="Water" type="ParallaxLayer" parent="ParallaxBackground"]
+z_as_relative = false
+y_sort_enabled = true
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Water"]
+texture = ExtResource("8_5b3r8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 40)
+script = ExtResource("10_rcgjd")

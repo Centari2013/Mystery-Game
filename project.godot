@@ -26,8 +26,12 @@ directories/dch_directory={
 "Detective": "res://characters/Detective.dch"
 }
 directories/dtl_directory={
+"blood_pool": "res://scenes/detective_home/object_dialogues/blood_pool.dtl",
 "broken_table": "res://scenes/detective_home/object_dialogues/broken_table.dtl",
-"timeline": "res://scenes/detective_home/timeline.dtl"
+"kids_shelf": "res://scenes/detective_home/object_dialogues/kids_shelf.dtl",
+"kids_toys": "res://scenes/detective_home/object_dialogues/kids_toys.dtl",
+"timeline": "res://scenes/detective_home/timeline.dtl",
+"wall_vent": "res://scenes/detective_home/object_dialogues/wall_vent.dtl"
 }
 layout/style_list=["res://main_style.tres", "res://temp.tres"]
 layout/default_style="res://main_style.tres"
