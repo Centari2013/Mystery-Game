@@ -19,7 +19,7 @@
 },
 "style": ""
 },
-"default_portrait": "happy",
+"default_portrait": "neutral",
 "description": "",
 "display_name": "You",
 "mirror": false,
@@ -57,6 +57,15 @@
 "happy": {
 "export_overrides": {
 "image": "\"res://assets/sprites/detective/happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"livid": {
+"export_overrides": {
+"image": "\"res://assets/sprites/detective/livid.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

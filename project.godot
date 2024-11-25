@@ -19,13 +19,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SceneManager="*res://scene_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"Al": "res://characters/Al.dch",
 "Amir": "res://characters/Amir.dch",
 "Clay": "res://characters/Clay.dch",
 "Detective": "res://characters/Detective.dch",
+"Gideon": "res://characters/Gideon.dch",
 "Khalil": "res://characters/Khalil.dch"
 }
 directories/dtl_directory={
@@ -33,6 +36,7 @@ directories/dtl_directory={
 "blood_pool": "res://scenes/detective_home/object_dialogues/blood_pool.dtl",
 "broken_table": "res://scenes/detective_home/object_dialogues/broken_table.dtl",
 "clay_sleep": "res://scenes/detective_home/object_dialogues/clay_sleep.dtl",
+"front_door": "res://scenes/detective_home/object_dialogues/front_door.dtl",
 "glass_splinters": "res://scenes/detective_home/object_dialogues/glass_splinters.dtl",
 "khalil_sleep": "res://scenes/detective_home/object_dialogues/khalil_sleep.dtl",
 "kids_shelf": "res://scenes/detective_home/object_dialogues/kids_shelf.dtl",
@@ -64,7 +68,12 @@ save/encryption_on_exports_only=true
 layout/end_behaviour=1
 text/autopauses={}
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"detective_home": {
+"called_al": false,
+"called_gideon": false
+}
+}
 
 [display]
 

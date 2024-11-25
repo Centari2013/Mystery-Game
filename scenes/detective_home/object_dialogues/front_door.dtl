@@ -1,0 +1,40 @@
+Detective: I need to find Oslo.
+label leaving
+- Leave.
+	- Call Gideon.
+	You take out your phone and call Gideon. The call rings for a while before it picks up.
+	Gideon: ...sigh...
+	Gideon: Hi. You've reached Gideon Myers with Apollo Tech IT Consulting Company...[pause=1]also know as ATICA. How may I assist you to-[pause=1] Hold on.
+	# #PLAY HOLD MUSIC
+	[music path="res://audio/golden-coast-melody-266586.mp3" fade="0.0" volume="0.0"]
+	Detective (angry): .[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].
+	[music fade="0.0" volume="0.0"]
+	# #STOP HOLD MUSIC
+	Gideon: How may I assist you tonight?
+	Detective (angry): Gideon!
+	Gideon: [color=gray]yawn...[/color]
+	Gideon: Boss, this is my work number...
+	
+	Detective (angry): I need your help. Something happened to Oslo and I don't know where he is.
+	
+	Gideon: ... #idk some sound
+	Gideon: ...what?
+	Detective (livid): MY HUSBAND IS MISSING!
+	Gideon: ...My dad?
+	Detective (livid): No! The other one!
+	Gideon: I'll clock out but you have to come pick me up.
+	Gideon: My car got towed.
+	Detective (angry): Ugh. Fine.
+	
+	# #maybe add call hang up sound
+	The call hangs up.
+	set {detective_home.called_gideon} = true
+	jump leaving
+
+- Call Al.
+	set {detective_home.called_al} = true
+- Leave alone. | [if {detective_home.called_gideon} == false and {detective_home.called_al} == false] [else="hide"]
+- Go back.
+	jump leaving
+
+- Go back.

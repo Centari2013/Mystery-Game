@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://cggrkuopl5x7n"]
+[gd_scene load_steps=99 format=4 uid="uid://cggrkuopl5x7n"]
 
 [ext_resource type="PackedScene" uid="uid://cm30nrxp5d4dw" path="res://scenes/Detective.tscn" id="1_es8h5"]
 [ext_resource type="Script" path="res://scripts/detective_house.gd" id="1_kaufy"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dquitv4hvyowo" path="res://assets/detective_home/living_room/painting_stuff/tarp_paint.png" id="25_ckn0o"]
 [ext_resource type="Texture2D" uid="uid://brrnbc6vyggv7" path="res://assets/detective_home/living_room/painting_stuff/pallete.png" id="26_cv77o"]
 [ext_resource type="Texture2D" uid="uid://chpbyg81xq2e4" path="res://assets/detective_home/living_room/painting_stuff/canvas.png" id="27_opy6x"]
+[ext_resource type="Script" path="res://scenes/detective_home/trigger_area.gd" id="28_874lj"]
 [ext_resource type="Script" path="res://scenes/detective_home/kids_sleeping.gd" id="28_fcg21"]
 [ext_resource type="Texture2D" uid="uid://cew55ols2qkak" path="res://assets/detective_home/living_room/painting_stuff/brushes.png" id="28_y1wo7"]
 [ext_resource type="Texture2D" uid="uid://bdowgbsp3axvn" path="res://assets/detective_home/living_room/painting_stuff/easel.png" id="29_d1vs1"]
@@ -98,6 +99,10 @@ size = Vector2(256, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfhq"]
 size = Vector2(57, 29)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uxgqd"]
+a = Vector2(-15.5, 3)
+b = Vector2(16.5, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wflfi"]
 size = Vector2(350, 126)
@@ -584,6 +589,22 @@ position = Vector2(-11.5, 4)
 shape = SubResource("RectangleShape2D_pvfhq")
 
 [node name="icon" type="AnimatedSprite2D" parent="Main_Area/Hall Vent Interaction Area"]
+visible = false
+position = Vector2(-24, -15)
+sprite_frames = SubResource("SpriteFrames_lkigy")
+animation = &"pulse"
+frame_progress = 0.184023
+
+[node name="Front Door Trigger Area" type="Area2D" parent="Main_Area"]
+position = Vector2(7, -93)
+script = ExtResource("28_874lj")
+file_path = "res://scenes/detective_home/object_dialogues/front_door.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Area/Front Door Trigger Area"]
+position = Vector2(-11.5, 4)
+shape = SubResource("SegmentShape2D_uxgqd")
+
+[node name="icon" type="AnimatedSprite2D" parent="Main_Area/Front Door Trigger Area"]
 visible = false
 position = Vector2(-24, -15)
 sprite_frames = SubResource("SpriteFrames_lkigy")
@@ -1110,6 +1131,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_exited" from="Main_Area/Living_Room/Glass Splinters" to="Main_Area/Living_Room/Glass Splinters" method="_on_body_exited"]
 [connection signal="body_entered" from="Main_Area/Hall Vent Interaction Area" to="Main_Area/Hall Vent Interaction Area" method="_on_body_entered"]
 [connection signal="body_exited" from="Main_Area/Hall Vent Interaction Area" to="Main_Area/Hall Vent Interaction Area" method="_on_body_exited"]
+[connection signal="body_entered" from="Main_Area/Front Door Trigger Area" to="Main_Area/Front Door Trigger Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Main_Area/Front Door Trigger Area" to="Main_Area/Front Door Trigger Area" method="_on_body_exited"]
 [connection signal="body_entered" from="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea" method="_on_body_entered"]
