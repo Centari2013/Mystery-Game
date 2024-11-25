@@ -1,0 +1,15 @@
+Khalil seems to be sleeping peacefully.
+- Wake him up.
+	Detective (confused): Khalil?
+	Detective: Are you ok?
+	[signal arg="pause"]
+	Khalil blinks at you blearily.
+	Khalil: Huh?
+	Khalil: Mom?
+	Detective (scared): Are you okay, sweetheart? Do you know what happened?
+	Khalil: I...[pause=1]We were playing with dad...[pause=2]Why am I so tired?
+	Detective (angry): You're ok. Just lay back down.
+	[signal arg="play"]
+- Let him sleep.
+
+[end_timeline]

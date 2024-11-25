@@ -34,8 +34,8 @@ func start_cutscene() -> void:
 	
 	sprite.show()
 	await get_tree().create_timer(2).timeout
-	move_player_to(Vector2(371, 421))  # Instantly position player
-	await make_player_walk_to(Vector2(371, 230))  # Simulate walking
+	move_player_to(Vector2(374, 421))  # Instantly position player
+	await make_player_walk_to(Vector2(374, 230))  # Simulate walking
 	
 	await get_tree().create_timer(1).timeout
 	play_dialogue("timeline")

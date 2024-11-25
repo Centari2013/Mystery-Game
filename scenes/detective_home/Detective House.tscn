@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://cggrkuopl5x7n"]
+[gd_scene load_steps=97 format=4 uid="uid://cggrkuopl5x7n"]
 
 [ext_resource type="PackedScene" uid="uid://cm30nrxp5d4dw" path="res://scenes/Detective.tscn" id="1_es8h5"]
 [ext_resource type="Script" path="res://scripts/detective_house.gd" id="1_kaufy"]
@@ -26,15 +26,20 @@
 [ext_resource type="Texture2D" uid="uid://00n0ldiav65h" path="res://assets/detective_home/living_room/easy_chair_mark.png" id="19_k56fi"]
 [ext_resource type="Texture2D" uid="uid://b6vbltpsf6ws0" path="res://assets/detective_home/living_room/broken_table.png" id="20_7xs3r"]
 [ext_resource type="Texture2D" uid="uid://cki4x4nghuiwr" path="res://assets/detective_home/living_room/table_blood.png" id="21_2aip6"]
+[ext_resource type="Texture2D" uid="uid://cwmkg762ufc5k" path="res://assets/detective_home/living_room/glass_splinters.png" id="21_5c4ar"]
 [ext_resource type="Texture2D" uid="uid://b4d3lgjl5wjib" path="res://assets/detective_home/living_room/tv.png" id="22_8j8u3"]
 [ext_resource type="Texture2D" uid="uid://bogw6ksioofgo" path="res://assets/detective_home/living_room/tv_blood.png" id="23_l7sp1"]
 [ext_resource type="Texture2D" uid="uid://r3info0ke3g3" path="res://assets/detective_home/living_room/painting_stuff/tarp.png" id="24_ir8hk"]
 [ext_resource type="Texture2D" uid="uid://dquitv4hvyowo" path="res://assets/detective_home/living_room/painting_stuff/tarp_paint.png" id="25_ckn0o"]
 [ext_resource type="Texture2D" uid="uid://brrnbc6vyggv7" path="res://assets/detective_home/living_room/painting_stuff/pallete.png" id="26_cv77o"]
 [ext_resource type="Texture2D" uid="uid://chpbyg81xq2e4" path="res://assets/detective_home/living_room/painting_stuff/canvas.png" id="27_opy6x"]
+[ext_resource type="Script" path="res://scenes/detective_home/kids_sleeping.gd" id="28_fcg21"]
 [ext_resource type="Texture2D" uid="uid://cew55ols2qkak" path="res://assets/detective_home/living_room/painting_stuff/brushes.png" id="28_y1wo7"]
 [ext_resource type="Texture2D" uid="uid://bdowgbsp3axvn" path="res://assets/detective_home/living_room/painting_stuff/easel.png" id="29_d1vs1"]
+[ext_resource type="Texture2D" uid="uid://bdm74x1x5fqoo" path="res://assets/detective_home/kids_room/khalil_sleeping_sheet.png" id="29_so0dj"]
+[ext_resource type="Texture2D" uid="uid://ch7ur0fkf6nyh" path="res://assets/detective_home/kids_room/amir_sleeping_sheet.png" id="30_4n5uh"]
 [ext_resource type="Texture2D" uid="uid://vw4hrxpvnr6m" path="res://assets/detective_home/guest_bathroom/sink.png" id="30_e0r7a"]
+[ext_resource type="Script" path="res://scenes/detective_home/sleeping_animation_pause.gd" id="30_t8uao"]
 [ext_resource type="Texture2D" uid="uid://bl3y5lcv0nhuv" path="res://assets/detective_home/guest_bathroom/trash_bin.png" id="31_djepk"]
 [ext_resource type="Texture2D" uid="uid://cili30cesya20" path="res://assets/detective_home/guest_bathroom/wall.png" id="31_mnk3m"]
 [ext_resource type="Texture2D" uid="uid://cxhoj8xu05dnl" path="res://assets/detective_home/guest_bathroom/toilet.png" id="32_ptxoa"]
@@ -51,6 +56,8 @@
 [ext_resource type="Texture2D" uid="uid://be1cw113osv5a" path="res://assets/detective_home/detective_room/bed.png" id="43_4osmr"]
 [ext_resource type="Texture2D" uid="uid://bj2oxh36r3o3i" path="res://assets/detective_home/detective_room/wall.png" id="44_0hfs1"]
 [ext_resource type="Texture2D" uid="uid://b68023i6t2hwh" path="res://assets/detective_home/detective_room/night_stands.png" id="45_ukekv"]
+[ext_resource type="Script" path="res://scenes/detective_home/clay_sleepng.gd" id="46_4o45w"]
+[ext_resource type="Texture2D" uid="uid://bjge44pmte6iu" path="res://assets/detective_home/detective_room/clay_sleeping_sheet.png" id="47_ltwcs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7m581"]
 size = Vector2(260, 221)
@@ -83,6 +90,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hloob"]
 size = Vector2(84, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg0wi"]
+size = Vector2(46, 57.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kix13"]
 size = Vector2(256, 221)
 
@@ -91,6 +101,56 @@ size = Vector2(57, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wflfi"]
 size = Vector2(350, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q201"]
+atlas = ExtResource("29_so0dj")
+region = Rect2(0, 0, 16, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5t5e"]
+atlas = ExtResource("29_so0dj")
+region = Rect2(16, 0, 16, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5f0t"]
+animations = [{
+"frames": [{
+"duration": 1.9,
+"texture": SubResource("AtlasTexture_7q201")
+}, {
+"duration": 1.9,
+"texture": SubResource("AtlasTexture_q5t5e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veytl"]
+size = Vector2(38, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn7sa"]
+atlas = ExtResource("30_4n5uh")
+region = Rect2(0, 0, 16, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1xtt"]
+atlas = ExtResource("30_4n5uh")
+region = Rect2(16, 0, 16, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_faht5"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_dn7sa")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_g1xtt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whvrr"]
+size = Vector2(38, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p48gn"]
 size = Vector2(33.5, 21.8125)
@@ -124,6 +184,31 @@ sources/0 = SubResource("TileSetAtlasSource_22mcb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i018"]
 size = Vector2(284, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnt80"]
+atlas = ExtResource("47_ltwcs")
+region = Rect2(0, 0, 20, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i2r3"]
+atlas = ExtResource("47_ltwcs")
+region = Rect2(20, 0, 20, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk3hh"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_cnt80")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_3i2r3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efvtx"]
+size = Vector2(55, 49.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p6iv1"]
 texture = ExtResource("44_0hfs1")
@@ -382,6 +467,31 @@ sprite_frames = SubResource("SpriteFrames_lkigy")
 animation = &"pulse"
 frame_progress = 0.184023
 
+[node name="Glass Splinters" type="Area2D" parent="Main_Area/Living_Room"]
+y_sort_enabled = true
+position = Vector2(78, -195)
+script = ExtResource("11_h46mr")
+file_path = "res://scenes/detective_home/object_dialogues/glass_splinters.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Area/Living_Room/Glass Splinters"]
+position = Vector2(26, 52)
+shape = SubResource("RectangleShape2D_sg0wi")
+
+[node name="icon" type="AnimatedSprite2D" parent="Main_Area/Living_Room/Glass Splinters"]
+visible = false
+position = Vector2(26, 9)
+sprite_frames = SubResource("SpriteFrames_lkigy")
+animation = &"pulse"
+frame_progress = 0.184023
+
+[node name="Node2D" type="Node2D" parent="Main_Area/Living_Room/Glass Splinters"]
+position = Vector2(-11, -42)
+
+[node name="glass splinters" type="Sprite2D" parent="Main_Area/Living_Room/Glass Splinters/Node2D"]
+modulate = Color(1, 1, 1, 0.87451)
+position = Vector2(-7, 107)
+texture = ExtResource("21_5c4ar")
+
 [node name="Kitchen" type="Area2D" parent="Main_Area"]
 y_sort_enabled = true
 position = Vector2(-129, -433)
@@ -491,12 +601,58 @@ position = Vector2(-7, -61)
 shape = SubResource("RectangleShape2D_wflfi")
 
 [node name="beds" type="StaticBody2D" parent="Kids_Room"]
+visible = false
 position = Vector2(13, -78)
 
 [node name="Sprite2D" type="Sprite2D" parent="Kids_Room/beds"]
 position = Vector2(0, 3)
 texture = ExtResource("3_kd588")
 offset = Vector2(0, -30)
+script = ExtResource("28_fcg21")
+
+[node name="Khalil_Sleeping" type="AnimatedSprite2D" parent="Kids_Room/beds/Sprite2D"]
+position = Vector2(-44, -34)
+sprite_frames = SubResource("SpriteFrames_y5f0t")
+frame_progress = 0.192573
+script = ExtResource("30_t8uao")
+
+[node name="InteractionArea" type="Area2D" parent="Kids_Room/beds/Sprite2D/Khalil_Sleeping"]
+position = Vector2(-5, -50)
+script = ExtResource("11_h46mr")
+file_path = "res://scenes/detective_home/object_dialogues/khalil_sleep.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_veytl")
+
+[node name="icon" type="AnimatedSprite2D" parent="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea"]
+visible = false
+position = Vector2(5, 15)
+sprite_frames = SubResource("SpriteFrames_lkigy")
+animation = &"pulse"
+frame_progress = 0.184023
+
+[node name="Amir_Sleeping" type="AnimatedSprite2D" parent="Kids_Room/beds/Sprite2D"]
+position = Vector2(44, -32)
+sprite_frames = SubResource("SpriteFrames_faht5")
+frame_progress = 0.11309
+script = ExtResource("30_t8uao")
+
+[node name="InteractionArea" type="Area2D" parent="Kids_Room/beds/Sprite2D/Amir_Sleeping"]
+position = Vector2(4, -50)
+script = ExtResource("11_h46mr")
+file_path = "res://scenes/detective_home/object_dialogues/amir_sleep.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_whvrr")
+
+[node name="icon" type="AnimatedSprite2D" parent="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea"]
+visible = false
+position = Vector2(-4, 15)
+sprite_frames = SubResource("SpriteFrames_lkigy")
+animation = &"pulse"
+frame_progress = 0.184023
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Kids_Room/beds"]
 position = Vector2(0, 3)
@@ -507,6 +663,7 @@ position = Vector2(0, 3)
 polygon = PackedVector2Array(59, 2, 59, -62, 29, -62, 29, -60, 29, -14, 29, 1)
 
 [node name="shelf" type="StaticBody2D" parent="Kids_Room"]
+visible = false
 position = Vector2(13, -156)
 
 [node name="Sprite2D" type="Sprite2D" parent="Kids_Room/shelf"]
@@ -533,6 +690,7 @@ animation = &"pulse"
 frame_progress = 0.184023
 
 [node name="lamp" type="StaticBody2D" parent="Kids_Room"]
+visible = false
 position = Vector2(13, -144)
 
 [node name="Sprite2D" type="Sprite2D" parent="Kids_Room/lamp"]
@@ -554,6 +712,7 @@ position = Vector2(-176, 39)
 texture = ExtResource("7_foi4f")
 
 [node name="toys" type="StaticBody2D" parent="Kids_Room"]
+visible = false
 position = Vector2(12, -94)
 
 [node name="Sprite2D" type="Sprite2D" parent="Kids_Room/toys"]
@@ -588,7 +747,6 @@ position = Vector2(-1, -1)
 polygon = PackedVector2Array(15, 24, 12, -12, -15, -12, -15, 24)
 
 [node name="HideOverlay" type="Node2D" parent="Kids_Room"]
-visible = false
 position = Vector2(0, -33)
 
 [node name="ColorRect" type="ColorRect" parent="Kids_Room/HideOverlay"]
@@ -608,6 +766,7 @@ position = Vector2(4.1875, 57)
 shape = SubResource("RectangleShape2D_ylgf4")
 
 [node name="icon" type="AnimatedSprite2D" parent="Kids_Room/InteractionArea"]
+visible = false
 position = Vector2(5, 15)
 sprite_frames = SubResource("SpriteFrames_lkigy")
 animation = &"pulse"
@@ -714,6 +873,29 @@ position = Vector2(34, -23)
 [node name="Sprite2D" type="Sprite2D" parent="Detective_Room/bed"]
 position = Vector2(0, -43)
 texture = ExtResource("43_4osmr")
+script = ExtResource("46_4o45w")
+
+[node name="Clay_Sleeping" type="AnimatedSprite2D" parent="Detective_Room/bed/Sprite2D"]
+position = Vector2(-26, -15)
+sprite_frames = SubResource("SpriteFrames_fk3hh")
+frame_progress = 0.286806
+script = ExtResource("30_t8uao")
+
+[node name="InteractionArea" type="Area2D" parent="Detective_Room/bed/Sprite2D/Clay_Sleeping"]
+position = Vector2(4, -50)
+script = ExtResource("11_h46mr")
+file_path = "res://scenes/detective_home/object_dialogues/clay_sleep.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detective_Room/bed/Sprite2D/Clay_Sleeping/InteractionArea"]
+position = Vector2(-9, 69.25)
+shape = SubResource("RectangleShape2D_efvtx")
+
+[node name="icon" type="AnimatedSprite2D" parent="Detective_Room/bed/Sprite2D/Clay_Sleeping/InteractionArea"]
+visible = false
+position = Vector2(-4, 15)
+sprite_frames = SubResource("SpriteFrames_lkigy")
+animation = &"pulse"
+frame_progress = 0.184023
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detective_Room/bed"]
 position = Vector2(0, -43)
@@ -924,11 +1106,19 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_exited" from="Main_Area/Living_Room/broken_table/InteractionArea" to="Main_Area/Living_Room/broken_table/InteractionArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Main_Area/Living_Room/Blood Pool" to="Main_Area/Living_Room/Blood Pool" method="_on_body_entered"]
 [connection signal="body_exited" from="Main_Area/Living_Room/Blood Pool" to="Main_Area/Living_Room/Blood Pool" method="_on_body_exited"]
+[connection signal="body_entered" from="Main_Area/Living_Room/Glass Splinters" to="Main_Area/Living_Room/Glass Splinters" method="_on_body_entered"]
+[connection signal="body_exited" from="Main_Area/Living_Room/Glass Splinters" to="Main_Area/Living_Room/Glass Splinters" method="_on_body_exited"]
 [connection signal="body_entered" from="Main_Area/Hall Vent Interaction Area" to="Main_Area/Hall Vent Interaction Area" method="_on_body_entered"]
 [connection signal="body_exited" from="Main_Area/Hall Vent Interaction Area" to="Main_Area/Hall Vent Interaction Area" method="_on_body_exited"]
+[connection signal="body_entered" from="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Khalil_Sleeping/InteractionArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea" to="Kids_Room/beds/Sprite2D/Amir_Sleeping/InteractionArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Kids_Room/shelf/InteractionArea" to="Kids_Room/shelf/InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Kids_Room/shelf/InteractionArea" to="Kids_Room/shelf/InteractionArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Kids_Room/toys/InteractionArea" to="Kids_Room/toys/InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Kids_Room/toys/InteractionArea" to="Kids_Room/toys/InteractionArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Kids_Room/InteractionArea" to="Kids_Room/InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Kids_Room/InteractionArea" to="Kids_Room/InteractionArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Detective_Room/bed/Sprite2D/Clay_Sleeping/InteractionArea" to="Detective_Room/bed/Sprite2D/Clay_Sleeping/InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Detective_Room/bed/Sprite2D/Clay_Sleeping/InteractionArea" to="Detective_Room/bed/Sprite2D/Clay_Sleeping/InteractionArea" method="_on_body_exited"]

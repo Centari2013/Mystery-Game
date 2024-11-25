@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bytkdc0qnelrw"]
+[gd_scene load_steps=15 format=3 uid="uid://bytkdc0qnelrw"]
 
 [ext_resource type="Texture2D" uid="uid://ekax87j081vc" path="res://assets/night_driving/parallax_layers/0background0.png" id="1_w4be7"]
 [ext_resource type="Texture2D" uid="uid://bothl3br1dsd8" path="res://assets/night_driving/parallax_layers/1stars0.png" id="2_up2yl"]
@@ -8,7 +8,46 @@
 [ext_resource type="Texture2D" uid="uid://dbwxuva5uqpf7" path="res://assets/night_driving/parallax_layers/5building3.png" id="6_6y7i7"]
 [ext_resource type="Texture2D" uid="uid://n4t067dom0ka" path="res://assets/night_driving/parallax_layers/7road_trees3.png" id="7_n37ck"]
 [ext_resource type="Texture2D" uid="uid://c18xha5ep3rdx" path="res://assets/night_driving/parallax_layers/8water3.png" id="8_5b3r8"]
+[ext_resource type="Texture2D" uid="uid://bowiycva4e4yq" path="res://assets/night_driving/detective_motorcycle.png" id="9_vjfv1"]
 [ext_resource type="Script" path="res://scenes/driving_cutscene/camera.gd" id="10_rcgjd"]
+[ext_resource type="Texture2D" uid="uid://dbpxvrdcsf10x" path="res://assets/night_driving/detective_car.png" id="11_p2nmy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdwbb"]
+atlas = ExtResource("9_vjfv1")
+region = Rect2(0, 0, 480, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ieaq"]
+atlas = ExtResource("9_vjfv1")
+region = Rect2(480, 0, 480, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8umc"]
+animations = [{
+"frames": [{
+"duration": 8.2,
+"texture": SubResource("AtlasTexture_kdwbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ieaq")
+}, {
+"duration": 11.9,
+"texture": SubResource("AtlasTexture_kdwbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ieaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdwbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ieaq")
+}, {
+"duration": 8.2,
+"texture": SubResource("AtlasTexture_kdwbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Driving_Cutscene" type="Node2D"]
 
@@ -80,3 +119,15 @@ texture = ExtResource("8_5b3r8")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 40)
 script = ExtResource("10_rcgjd")
+
+[node name="Detective_Motorcycle" type="AnimatedSprite2D" parent="Camera2D"]
+visible = false
+position = Vector2(-48, -40)
+sprite_frames = SubResource("SpriteFrames_w8umc")
+frame_progress = 0.199968
+
+[node name="Detective_Car" type="Sprite2D" parent="Camera2D"]
+visible = false
+position = Vector2(-6, -92)
+scale = Vector2(1.41, 1.41)
+texture = ExtResource("11_p2nmy")

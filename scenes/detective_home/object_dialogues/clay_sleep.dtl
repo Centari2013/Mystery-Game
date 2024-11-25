@@ -1,0 +1,28 @@
+Clay is mumbling in his sleep.
+- Wake up Clay.
+	Detective: Clay?
+	Clay rolls over.
+	Detective (angry): Clay!
+	[signal arg="pause"]
+	Clay: What?!
+	Clay: What happened?!
+	Detective (angry): That's what I'm trying to figure out! Where's Oslo??
+	Clay: Ozz...[pause=1]He was painting in the living room and I was...
+	Clay: I think I was playing with the kids.
+	Detective (angry): Then what?
+	Clay: I don't know...
+	Clay runs a hand through is hair groggily. He's balding a bit.
+	Detective (sad): Something's wrong. [pause=1]I'm going to go look for him.
+	Clay tries to get up, but he seems uncoordinated.
+	Detective (confused): Don't even bother. 
+	Detective: Stay here with the kids.
+	Clay: Ain't gotta tell me twice.
+	Detective (angry): .[pause=0.5].[pause=0.5].
+	Clay: Be safe, pumpkin.
+	Detective (embarrassed): ...I will...
+	[signal arg="play"]
+- Listen closely.
+	Clay: Hands up...[pause=2]you're under arrest for indecent exposure...
+	Clay: Hehe...
+- Go to sleep.
+- Go back.

@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cm30nrxp5d4dw"]
 
 [ext_resource type="Script" path="res://scripts/detective.gd" id="1_df53x"]
-[ext_resource type="Texture2D" uid="uid://cdels1ydlmjet" path="res://assets/detective-animations.png" id="2_vedwb"]
+[ext_resource type="Texture2D" uid="uid://cdels1ydlmjet" path="res://assets/sprites/detective/detective-animations.png" id="2_vedwb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7od58"]
 atlas = ExtResource("2_vedwb")

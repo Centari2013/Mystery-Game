@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdels1ydlmjet"
-path="res://.godot/imported/detective-animations.png-bd36a873fe18727d99aa37a844ac19bf.ctex"
+uid="uid://bdm74x1x5fqoo"
+path="res://.godot/imported/khalil_sleeping_sheet.png-18aaebbc121dac4e8069e2f9500b918f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/detective-animations.png"
-dest_files=["res://.godot/imported/detective-animations.png-bd36a873fe18727d99aa37a844ac19bf.ctex"]
+source_file="res://assets/detective_home/kids_room/khalil_sleeping_sheet.png"
+dest_files=["res://.godot/imported/khalil_sleeping_sheet.png-18aaebbc121dac4e8069e2f9500b918f.ctex"]
 
 [params]
 

@@ -1,0 +1,17 @@
+Amir seems to be haveing a fitful sleep.
+- Wake him up.
+	Detective (confused): Amir? Honey, are you ok?
+	Amir: Nngh...
+	Detective (scared): Amir, wake up."
+	You shake him lightly.
+	[signal arg="pause"]
+	Amir: Go away...[pause=1.5]sleepy...
+	He seems to be just fine.
+	Detective (scared): Do you know what happened?
+	Amir: Daddy...[pause=2]man...
+	He rolls over, signaling that he doesn't want to be bothered.
+	Detective (angry): Kids these days...
+	[signal arg="play"]
+- Let him sleep.
+
+[end_timeline]

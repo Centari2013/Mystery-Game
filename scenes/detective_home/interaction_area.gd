@@ -30,18 +30,15 @@ func _process(delta: float) -> void:
 
 
 func create_timeline() -> DialogicTimeline:
-	var events : Array = []
+	var timeline : DialogicTimeline = DialogicTimeline.new()
 	var file := FileAccess.open(file_path, FileAccess.READ)
 	if file:
 		# read in Dialogic timeline text
-		while file.get_position() < file.get_length():
-			var text_event = DialogicTextEvent.new()
-			text_event.text = file.get_line()
-			events.append(text_event)
+		var text = file.get_as_text()
+		timeline.from_text(text)	
 		file.close()
 		
-		var timeline : DialogicTimeline = DialogicTimeline.new()
-		timeline.events = events
+		timeline.process()
 		return timeline
 		
 	else:

@@ -23,11 +23,18 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Detective": "res://characters/Detective.dch"
+"Amir": "res://characters/Amir.dch",
+"Clay": "res://characters/Clay.dch",
+"Detective": "res://characters/Detective.dch",
+"Khalil": "res://characters/Khalil.dch"
 }
 directories/dtl_directory={
+"amir_sleep": "res://scenes/detective_home/object_dialogues/amir_sleep.dtl",
 "blood_pool": "res://scenes/detective_home/object_dialogues/blood_pool.dtl",
 "broken_table": "res://scenes/detective_home/object_dialogues/broken_table.dtl",
+"clay_sleep": "res://scenes/detective_home/object_dialogues/clay_sleep.dtl",
+"glass_splinters": "res://scenes/detective_home/object_dialogues/glass_splinters.dtl",
+"khalil_sleep": "res://scenes/detective_home/object_dialogues/khalil_sleep.dtl",
 "kids_shelf": "res://scenes/detective_home/object_dialogues/kids_shelf.dtl",
 "kids_toys": "res://scenes/detective_home/object_dialogues/kids_toys.dtl",
 "timeline": "res://scenes/detective_home/timeline.dtl",
