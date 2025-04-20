@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bytkdc0qnelrw"]
+[gd_scene load_steps=22 format=3 uid="uid://bytkdc0qnelrw"]
 
+[ext_resource type="Script" uid="uid://crqlydpougq27" path="res://scenes/driving_cutscene/driving_cutscene.gd" id="1_8upwg"]
 [ext_resource type="Texture2D" uid="uid://ekax87j081vc" path="res://assets/night_driving/parallax_layers/0background0.png" id="1_w4be7"]
 [ext_resource type="Texture2D" uid="uid://bothl3br1dsd8" path="res://assets/night_driving/parallax_layers/1stars0.png" id="2_up2yl"]
 [ext_resource type="Texture2D" uid="uid://qmfnx3gmk8h6" path="res://assets/night_driving/parallax_layers/2background_lighting1.png" id="3_j8fh5"]
@@ -7,10 +8,29 @@
 [ext_resource type="Texture2D" uid="uid://drvhrgqebn4w1" path="res://assets/night_driving/parallax_layers/4building2.png" id="5_ecpnf"]
 [ext_resource type="Texture2D" uid="uid://dbwxuva5uqpf7" path="res://assets/night_driving/parallax_layers/5building3.png" id="6_6y7i7"]
 [ext_resource type="Texture2D" uid="uid://n4t067dom0ka" path="res://assets/night_driving/parallax_layers/7road_trees3.png" id="7_n37ck"]
-[ext_resource type="Texture2D" uid="uid://c18xha5ep3rdx" path="res://assets/night_driving/parallax_layers/8water3.png" id="8_5b3r8"]
+[ext_resource type="Texture2D" uid="uid://bk8e3jpfno88h" path="res://assets/night_driving/parallax_layers/6lower_light3.png" id="8_v7sxr"]
+[ext_resource type="Shader" uid="uid://dwkppr1iunfi" path="res://scenes/driving_cutscene/water_distortion.gdshader" id="9_qdrsw"]
 [ext_resource type="Texture2D" uid="uid://bowiycva4e4yq" path="res://assets/night_driving/detective_motorcycle.png" id="9_vjfv1"]
-[ext_resource type="Script" path="res://scenes/driving_cutscene/camera.gd" id="10_rcgjd"]
+[ext_resource type="Script" uid="uid://c1kkdw644e67d" path="res://scenes/driving_cutscene/camera.gd" id="10_rcgjd"]
+[ext_resource type="Texture2D" uid="uid://4c8tms6stw36" path="res://assets/night_driving/water_noise.png" id="11_gorpy"]
 [ext_resource type="Texture2D" uid="uid://dbpxvrdcsf10x" path="res://assets/night_driving/detective_car.png" id="11_p2nmy"]
+
+[sub_resource type="Gradient" id="Gradient_lpjbo"]
+offsets = PackedFloat32Array(0, 0.735043)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mcsrk"]
+gradient = SubResource("Gradient_lpjbo")
+fill = 1
+fill_from = Vector2(0.513812, 0.486188)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bu6wu"]
+resource_local_to_scene = true
+shader = ExtResource("9_qdrsw")
+shader_parameter/NOISE_TEX = ExtResource("11_gorpy")
+shader_parameter/waves_size = Vector2(0.01, 0.003)
+shader_parameter/time_scale_x = 8.0
+shader_parameter/amp_mult = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdwbb"]
 atlas = ExtResource("9_vjfv1")
@@ -49,11 +69,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Environment" id="Environment_mbmuk"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 2.38
+glow_bloom = 0.16
+
 [node name="Driving_Cutscene" type="Node2D"]
+script = ExtResource("1_8upwg")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(960, 0)
 
@@ -61,6 +89,7 @@ motion_mirroring = Vector2(960, 0)
 texture = ExtResource("1_w4be7")
 
 [node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(960, 0)
 
@@ -69,6 +98,7 @@ position = Vector2(0, 27)
 texture = ExtResource("2_up2yl")
 
 [node name="Background_Lighting" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_scale = Vector2(0.25, 1)
 motion_mirroring = Vector2(960, 0)
 
@@ -76,6 +106,7 @@ motion_mirroring = Vector2(960, 0)
 texture = ExtResource("3_j8fh5")
 
 [node name="Building1" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(960, 0)
 
@@ -83,6 +114,7 @@ motion_mirroring = Vector2(960, 0)
 texture = ExtResource("4_fp3xg")
 
 [node name="Building2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(960, 0)
 
@@ -90,6 +122,7 @@ motion_mirroring = Vector2(960, 0)
 texture = ExtResource("5_ecpnf")
 
 [node name="Building3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(960, 0)
 
@@ -97,24 +130,271 @@ motion_mirroring = Vector2(960, 0)
 texture = ExtResource("6_6y7i7")
 
 [node name="Lower_Lights" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_mirroring = Vector2(960, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Lower_Lights"]
+texture = ExtResource("8_v7sxr")
 
 [node name="Road_Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, -54)
 motion_mirroring = Vector2(960, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Road_Trees"]
 texture = ExtResource("7_n37ck")
 
+[node name="StreetLights" type="Node2D" parent="ParallaxBackground/Road_Trees"]
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-48, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D11" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(0, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D12" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(48, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D13" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(112, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D14" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(175, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D15" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(241, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D16" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(305, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D17" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(368, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D18" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(433, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D19" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(480, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D20" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(528, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D21" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(593, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D22" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(656, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D23" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(720, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D24" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(784, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D25" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(848, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D26" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(913, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D27" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1007, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D28" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1073, 91)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D29" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1136, 89)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D30" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1199, 89)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D31" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1265, 89)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D32" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1330, 89)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D33" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1393, 89)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D34" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(1439, 89)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(0, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-48, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D4" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-112, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D5" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-177, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D6" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-239, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D7" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-302, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D8" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-369, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D9" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-432, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
+[node name="PointLight2D10" type="PointLight2D" parent="ParallaxBackground/Road_Trees/StreetLights"]
+position = Vector2(-480, 88)
+color = Color(1, 1, 0.619608, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = SubResource("GradientTexture2D_mcsrk")
+
 [node name="Water" type="ParallaxLayer" parent="ParallaxBackground"]
 z_as_relative = false
 y_sort_enabled = true
-motion_scale = Vector2(0, 1)
+position = Vector2(1, -54)
 motion_mirroring = Vector2(960, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Water"]
-texture = ExtResource("8_5b3r8")
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Water"]
+material = SubResource("ShaderMaterial_bu6wu")
+offset_left = -480.0
+offset_top = 99.0
+offset_right = 480.0
+offset_bottom = 179.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 40)
@@ -122,12 +402,29 @@ script = ExtResource("10_rcgjd")
 
 [node name="Detective_Motorcycle" type="AnimatedSprite2D" parent="Camera2D"]
 visible = false
-position = Vector2(-48, -40)
+position = Vector2(-45, -94)
 sprite_frames = SubResource("SpriteFrames_w8umc")
 frame_progress = 0.199968
 
 [node name="Detective_Car" type="Sprite2D" parent="Camera2D"]
 visible = false
-position = Vector2(-6, -92)
-scale = Vector2(1.41, 1.41)
+position = Vector2(5, -61)
+scale = Vector2(1.05357, 1.05357)
 texture = ExtResource("11_p2nmy")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = -478.0
+offset_top = 78.0
+offset_right = 482.0
+offset_bottom = 135.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Camera2D"]
+offset_left = -479.0
+offset_top = -135.0
+offset_right = 481.0
+offset_bottom = -78.0
+color = Color(0, 0, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mbmuk")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://blb4maprbhbul"]
+
+[ext_resource type="Script" uid="uid://dtaockd7lvdj6" path="res://scenes/pick_up_gideon_cutscene/gideon_pickup.gd" id="1_fbc82"]
+[ext_resource type="Texture2D" uid="uid://c378whgxqsje6" path="res://scenes/pick_up_gideon_cutscene/gideon_job.png" id="1_j4gyx"]
+[ext_resource type="PackedScene" uid="uid://d3hjmr40j6qt6" path="res://scenes/Gideon.tscn" id="2_7sfju"]
+[ext_resource type="Texture2D" uid="uid://1flk5vmpfjn0" path="res://scenes/pick_up_gideon_cutscene/car.png" id="4_f2yyy"]
+[ext_resource type="Script" uid="uid://p0brmr0wdoa0" path="res://scenes/pick_up_gideon_cutscene/car.gd" id="5_7ew48"]
+
+[sub_resource type="Gradient" id="Gradient_i5dt0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c5kp4"]
+gradient = SubResource("Gradient_i5dt0")
+fill = 2
+fill_from = Vector2(0.497238, 0.441989)
+
+[sub_resource type="Gradient" id="Gradient_nv44m"]
+offsets = PackedFloat32Array(0, 0.017094, 0.700855)
+colors = PackedColorArray(1, 1, 1, 1, 0.923077, 0.923077, 0.923077, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ftt5"]
+gradient = SubResource("Gradient_nv44m")
+fill = 1
+fill_from = Vector2(0.508287, 0.508287)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fbc82")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_j4gyx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.500002, -82)
+scale = Vector2(3.70312, 1)
+color = Color(0.247059, 0.819608, 0.247059, 1)
+shadow_enabled = true
+shadow_color = Color(0.113725, 0.113725, 0.113725, 0)
+texture = SubResource("GradientTexture2D_c5kp4")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1, -12)
+scale = Vector2(5.04688, 4.71094)
+color = Color(0.518688, 0.367296, 0.166339, 1)
+energy = 1.75
+range_layer_min = -2
+range_layer_max = 2
+texture = SubResource("GradientTexture2D_4ftt5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -240.0
+offset_top = -135.0
+offset_right = -203.0
+offset_bottom = -6.0
+color = Color(0, 0, 0, 0.462745)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 213.0
+offset_top = -135.0
+offset_right = 250.0
+offset_bottom = -6.0
+color = Color(0, 0, 0, 0.462745)
+
+[node name="Gideon" parent="." instance=ExtResource("2_7sfju")]
+position = Vector2(0, 43)
+
+[node name="Car" type="Sprite2D" parent="."]
+position = Vector2(-338.111, 114)
+scale = Vector2(0.703704, 0.703704)
+texture = ExtResource("4_f2yyy")
+script = ExtResource("5_7ew48")

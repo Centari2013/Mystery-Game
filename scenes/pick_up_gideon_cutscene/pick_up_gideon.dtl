@@ -1,0 +1,9 @@
+Detective (neutral): Get in.
+Gideon: Jeez. You make it sound like a hostage situation.
+Detective (angry): It might be! Now get in!
+[signal arg="gideon_walk"]
+[wait time="2.0"]
+if {detective_home.called_al} == true:
+	Gideon: Oh! Hey Al.
+	Al: Long time no see, Gidmeister.
+	Gideon: ...Don't call me that.

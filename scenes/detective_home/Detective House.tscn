@@ -1,11 +1,11 @@
 [gd_scene load_steps=99 format=4 uid="uid://cggrkuopl5x7n"]
 
 [ext_resource type="PackedScene" uid="uid://cm30nrxp5d4dw" path="res://scenes/Detective.tscn" id="1_es8h5"]
-[ext_resource type="Script" path="res://scripts/detective_house.gd" id="1_kaufy"]
+[ext_resource type="Script" uid="uid://7xom4cbovrf5" path="res://scripts/detective_house.gd" id="1_kaufy"]
 [ext_resource type="Texture2D" uid="uid://bi1vhvuru3uex" path="res://assets/detective_home/detective_house_base.png" id="2_0es4n"]
 [ext_resource type="Texture2D" uid="uid://cox4mpuj0387q" path="res://assets/detective_home/kids_room/kid_beds.png" id="3_kd588"]
 [ext_resource type="Texture2D" uid="uid://pewls4b1guyq" path="res://assets/detective_home/kids_room/shelf.png" id="4_exvsw"]
-[ext_resource type="Script" path="res://scripts/area_entry.gd" id="4_rff4i"]
+[ext_resource type="Script" uid="uid://dbya5tpn080lg" path="res://scripts/area_entry.gd" id="4_rff4i"]
 [ext_resource type="Texture2D" uid="uid://b6h5jkarqbaxx" path="res://assets/detective_home/kids_room/lamp.png" id="5_xtbre"]
 [ext_resource type="Texture2D" uid="uid://cw5ngv733128k" path="res://assets/detective_home/kids_room/kids_room_wall.png" id="6_sxt14"]
 [ext_resource type="Texture2D" uid="uid://dvhaojeyxcwdl" path="res://assets/detective_home/kids_room/bathroom_door.png" id="7_foi4f"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d2kcrn7e7emi8" path="res://assets/detective_home/detective_room/detective_bathroom/wall.png" id="10_7yv3q"]
 [ext_resource type="Texture2D" uid="uid://d1o8cprgn0dka" path="res://assets/detective_home/guest_bathroom/mirror.png" id="11_g058c"]
 [ext_resource type="Texture2D" uid="uid://8xc1c2ipgo83" path="res://assets/detective_home/kids_room/kids_bathroom/wall.png" id="11_gl4v7"]
-[ext_resource type="Script" path="res://scenes/detective_home/interaction_area.gd" id="11_h46mr"]
+[ext_resource type="Script" uid="uid://bx5jccepo1ndn" path="res://scenes/detective_home/interaction_area.gd" id="11_h46mr"]
 [ext_resource type="Texture2D" uid="uid://bhpuu1jlf1uk" path="res://assets/interaction_icon-sheet.png" id="12_0kr12"]
 [ext_resource type="Texture2D" uid="uid://dsc0357gkuk1k" path="res://assets/detective_home/kids_room/kids_bathroom/sink.png" id="12_d80em"]
 [ext_resource type="Texture2D" uid="uid://c38361c2fo7vd" path="res://assets/detective_home/kids_room/kids_bathroom/trash_bin.png" id="13_dq3tp"]
@@ -33,14 +33,14 @@
 [ext_resource type="Texture2D" uid="uid://dquitv4hvyowo" path="res://assets/detective_home/living_room/painting_stuff/tarp_paint.png" id="25_ckn0o"]
 [ext_resource type="Texture2D" uid="uid://brrnbc6vyggv7" path="res://assets/detective_home/living_room/painting_stuff/pallete.png" id="26_cv77o"]
 [ext_resource type="Texture2D" uid="uid://chpbyg81xq2e4" path="res://assets/detective_home/living_room/painting_stuff/canvas.png" id="27_opy6x"]
-[ext_resource type="Script" path="res://scenes/detective_home/trigger_area.gd" id="28_874lj"]
-[ext_resource type="Script" path="res://scenes/detective_home/kids_sleeping.gd" id="28_fcg21"]
+[ext_resource type="Script" uid="uid://f14k8exifgwf" path="res://scenes/detective_home/door_trigger.gd" id="28_874lj"]
+[ext_resource type="Script" uid="uid://ble7ojv5xbe82" path="res://scenes/detective_home/kids_sleeping.gd" id="28_fcg21"]
 [ext_resource type="Texture2D" uid="uid://cew55ols2qkak" path="res://assets/detective_home/living_room/painting_stuff/brushes.png" id="28_y1wo7"]
 [ext_resource type="Texture2D" uid="uid://bdowgbsp3axvn" path="res://assets/detective_home/living_room/painting_stuff/easel.png" id="29_d1vs1"]
 [ext_resource type="Texture2D" uid="uid://bdm74x1x5fqoo" path="res://assets/detective_home/kids_room/khalil_sleeping_sheet.png" id="29_so0dj"]
 [ext_resource type="Texture2D" uid="uid://ch7ur0fkf6nyh" path="res://assets/detective_home/kids_room/amir_sleeping_sheet.png" id="30_4n5uh"]
 [ext_resource type="Texture2D" uid="uid://vw4hrxpvnr6m" path="res://assets/detective_home/guest_bathroom/sink.png" id="30_e0r7a"]
-[ext_resource type="Script" path="res://scenes/detective_home/sleeping_animation_pause.gd" id="30_t8uao"]
+[ext_resource type="Script" uid="uid://jx1itq66vhcm" path="res://scenes/detective_home/sleeping_animation_pause.gd" id="30_t8uao"]
 [ext_resource type="Texture2D" uid="uid://bl3y5lcv0nhuv" path="res://assets/detective_home/guest_bathroom/trash_bin.png" id="31_djepk"]
 [ext_resource type="Texture2D" uid="uid://cili30cesya20" path="res://assets/detective_home/guest_bathroom/wall.png" id="31_mnk3m"]
 [ext_resource type="Texture2D" uid="uid://cxhoj8xu05dnl" path="res://assets/detective_home/guest_bathroom/toilet.png" id="32_ptxoa"]
@@ -57,7 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://be1cw113osv5a" path="res://assets/detective_home/detective_room/bed.png" id="43_4osmr"]
 [ext_resource type="Texture2D" uid="uid://bj2oxh36r3o3i" path="res://assets/detective_home/detective_room/wall.png" id="44_0hfs1"]
 [ext_resource type="Texture2D" uid="uid://b68023i6t2hwh" path="res://assets/detective_home/detective_room/night_stands.png" id="45_ukekv"]
-[ext_resource type="Script" path="res://scenes/detective_home/clay_sleepng.gd" id="46_4o45w"]
+[ext_resource type="Script" uid="uid://4bftir0bi4ix" path="res://scenes/detective_home/clay_sleepng.gd" id="46_4o45w"]
 [ext_resource type="Texture2D" uid="uid://bjge44pmte6iu" path="res://assets/detective_home/detective_room/clay_sleeping_sheet.png" id="47_ltwcs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7m581"]
@@ -248,7 +248,6 @@ sources/1 = SubResource("TileSetAtlasSource_l0edo")
 [node name="Detective House" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_kaufy")
-disable_cutscene = true
 
 [node name="Detective" parent="." instance=ExtResource("1_es8h5")]
 unique_name_in_owner = true
@@ -598,7 +597,6 @@ frame_progress = 0.184023
 [node name="Front Door Trigger Area" type="Area2D" parent="Main_Area"]
 position = Vector2(7, -93)
 script = ExtResource("28_874lj")
-file_path = "res://scenes/detective_home/object_dialogues/front_door.dtl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Area/Front Door Trigger Area"]
 position = Vector2(-11.5, 4)

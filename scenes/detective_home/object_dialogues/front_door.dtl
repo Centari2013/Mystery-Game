@@ -1,23 +1,21 @@
 Detective: I need to find Oslo.
-label leaving
-- Leave.
-	- Call Gideon.
+[wait time="0.1"]
+label choices
+- Call Gideon. | [if {detective_home.called_gideon} == false] [else="hide"]
 	You take out your phone and call Gideon. The call rings for a while before it picks up.
-	Gideon: ...sigh...
+	[sound path="res://audio/gideon_sigh.wav" volume="0.0"]
+	Gideon: [color=dimgray]...sigh...[/color]
 	Gideon: Hi. You've reached Gideon Myers with Apollo Tech IT Consulting Company...[pause=1]also know as ATICA. How may I assist you to-[pause=1] Hold on.
 	# #PLAY HOLD MUSIC
-	[music path="res://audio/golden-coast-melody-266586.mp3" fade="0.0" volume="0.0"]
+	[music path="res://audio/golden-coast-melody-edit.wav" fade="0.0" volume="0.0"]
 	Detective (angry): .[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].[pause=2].
 	[music fade="0.0" volume="0.0"]
 	# #STOP HOLD MUSIC
 	Gideon: How may I assist you tonight?
-	Detective (angry): Gideon!
-	Gideon: [color=gray]yawn...[/color]
+	Detective (livid): Gideon!
 	Gideon: Boss, this is my work number...
 	
 	Detective (angry): I need your help. Something happened to Oslo and I don't know where he is.
-	
-	Gideon: ... #idk some sound
 	Gideon: ...what?
 	Detective (livid): MY HUSBAND IS MISSING!
 	Gideon: ...My dad?
@@ -29,12 +27,36 @@ label leaving
 	# #maybe add call hang up sound
 	The call hangs up.
 	set {detective_home.called_gideon} = true
-	jump leaving
+	jump choices
 
-- Call Al.
+
+- Call Al. | [if {detective_home.called_al} == false] [else="hide"]
+	You call Al. The phone rings for all of one second before she picks up.
+	Al: Hi, detective!
+	Detective (angry): Al, we have a problem. Oslo is missing.
+	Al: That's not good. Is he having another episode?
+	Detective (sad): He shouldn't be. We got that chip in his head removed, remember?
+	Al: Have you tried calling him?
+	Detective (angry): I called him on my way home and he didn't pick up. Clay and the kids are fine but there's a big-ass hole in our living room window and the place is trashed!
+	Detective (sad): I need your help.
+	Al: Affirmative, detective! Initializing upload protocol.
+	You hear a voice over the phone.
+	unknown: Al, what are you doing??
+	Al: Going to work!
+	unknown: But, we're in the middle of—
+	Al: Duty calls, Andrei!
+	Your phone buzzes and the call hangs up. Almeda has invaded your phone.
+	Al: Hi, detective! Almeda, reporting for duty! How may I be of service?
+	Detective (angry): You're going to help me find my husband.
+	
 	set {detective_home.called_al} = true
+	jump choices
+- Leave. | [if {detective_home.called_gideon} == true or {detective_home.called_al} == true] [else="hide"]
+	if {detective_home.called_gideon} == true:
+		do SceneManager.load_scene("res://scenes/pick_up_gideon_cutscene/gideon_pickup.tscn")
+	else:
+		do SceneManager.load_scene("res://scenes/driving_cutscene/Driving_Cutscene.tscn")
 - Leave alone. | [if {detective_home.called_gideon} == false and {detective_home.called_al} == false] [else="hide"]
-- Go back.
-	jump leaving
+	do SceneManager.load_scene("res://scenes/driving_cutscene/Driving_Cutscene.tscn")
 
 - Go back.

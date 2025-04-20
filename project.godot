@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Mystery"
 run/main_scene="res://scenes/detective_home/Detective House.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
@@ -29,25 +29,31 @@ directories/dch_directory={
 "Clay": "res://characters/Clay.dch",
 "Detective": "res://characters/Detective.dch",
 "Gideon": "res://characters/Gideon.dch",
-"Khalil": "res://characters/Khalil.dch"
+"Khalil": "res://characters/Khalil.dch",
+"unknown": "res://characters/unknown.dch"
 }
 directories/dtl_directory={
+"al": "res://scenes/driving_cutscene/dialogue/al.dtl",
 "amir_sleep": "res://scenes/detective_home/object_dialogues/amir_sleep.dtl",
 "blood_pool": "res://scenes/detective_home/object_dialogues/blood_pool.dtl",
 "broken_table": "res://scenes/detective_home/object_dialogues/broken_table.dtl",
 "clay_sleep": "res://scenes/detective_home/object_dialogues/clay_sleep.dtl",
 "front_door": "res://scenes/detective_home/object_dialogues/front_door.dtl",
+"gideon": "res://scenes/driving_cutscene/dialogue/gideon.dtl",
+"gideon_and_al": "res://scenes/driving_cutscene/dialogue/gideon_and_al.dtl",
 "glass_splinters": "res://scenes/detective_home/object_dialogues/glass_splinters.dtl",
 "khalil_sleep": "res://scenes/detective_home/object_dialogues/khalil_sleep.dtl",
 "kids_shelf": "res://scenes/detective_home/object_dialogues/kids_shelf.dtl",
 "kids_toys": "res://scenes/detective_home/object_dialogues/kids_toys.dtl",
+"pick_up_gideon": "res://scenes/pick_up_gideon_cutscene/pick_up_gideon.dtl",
+"solo": "res://scenes/driving_cutscene/dialogue/solo.dtl",
 "timeline": "res://scenes/detective_home/timeline.dtl",
 "wall_vent": "res://scenes/detective_home/object_dialogues/wall_vent.dtl"
 }
-layout/style_list=["res://main_style.tres", "res://temp.tres"]
+layout/style_list=["res://main_style.tres", "res://fonts/supertemp.tres"]
 layout/default_style="res://main_style.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -91,21 +97,25 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 move_right={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
 ]
 }
 move_left={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
 ]
 }
 move_up={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
 ]
 }
 move_down={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
 dialogic_default_action={
@@ -126,5 +136,5 @@ interact={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

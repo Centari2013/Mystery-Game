@@ -19,6 +19,7 @@ func look_around(arg:String):
 			sprite.flip_h = true
 		"look_right":
 			sprite.animation = "walk_right"
+			sprite.flip_h = false
 		"look_straight":
 			sprite.animation = "walk_up"
 		

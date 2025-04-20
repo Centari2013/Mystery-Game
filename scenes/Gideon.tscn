@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3hjmr40j6qt6"]
+
+[ext_resource type="Texture2D" uid="uid://blwf0nqnqu2h5" path="res://assets/sprites/gideon/gideon-animations.png" id="1_i257n"]
+[ext_resource type="Script" uid="uid://f26je87awtog" path="res://scenes/gideon.gd" id="1_m55ps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pyk0"]
+atlas = ExtResource("1_i257n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vamm0"]
+atlas = ExtResource("1_i257n")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h745f"]
+atlas = ExtResource("1_i257n")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoeyl"]
+atlas = ExtResource("1_i257n")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbn7a"]
+atlas = ExtResource("1_i257n")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5au"]
+atlas = ExtResource("1_i257n")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xkml"]
+atlas = ExtResource("1_i257n")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mag8"]
+atlas = ExtResource("1_i257n")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kuo6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pyk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vamm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h745f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoeyl")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbn7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh5au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xkml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mag8")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fabpm"]
+size = Vector2(16, 4)
+
+[node name="Gideon" type="CharacterBody2D"]
+script = ExtResource("1_m55ps")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_kuo6u")
+animation = &"walk_down"
+offset = Vector2(0, -23)
+
+[node name="feet collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_fabpm")

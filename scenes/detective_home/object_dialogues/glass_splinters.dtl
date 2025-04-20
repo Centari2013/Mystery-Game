@@ -1,3 +1,4 @@
 [background arg="res://assets/detective_home/living_room/broken_window_view.png" fade="1.5"]
 [wait time="2.0" skippable="true"]
 That's one big-ass hole...
+[background fade="0.0"]
